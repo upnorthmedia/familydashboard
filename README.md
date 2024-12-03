@@ -150,17 +150,6 @@ MIT License - feel free to use this project for your own family dashboard!
 - Camera integration powered by Ring API
 - Icons by Lucide
 
-## Screenshots
-### Dashboard
-![alt text](https://i.imgur.com/ttNy6Nv.jpeg)
-
-### Real Running Dashboard
-![alt text](https://i.imgur.com/tqJ4toP.jpeg)
-
-### Mobile Admin App
-![alt text](https://i.imgur.com/DGxOhDn.png)
-
-
 ---
 
 This dashboard is designed to be displayed 24/7 on a TV screen, providing your family with important information at a glance. The glass-morphism design ensures it looks great in any room, while the dark theme prevents screen burn-in on TV displays.
