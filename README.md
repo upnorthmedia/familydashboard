@@ -2,6 +2,9 @@
 
 A modern, real-time family dashboard designed to run on a Raspberry Pi connected to a TV display. Built with Next.js 13, TypeScript, and Tailwind CSS, featuring a beautiful dark theme and glass-morphism design.
 
+![image](https://imgur.com/a/qKPErUI))
+
+
 ## Features
 
 ### 🕒 Real-Time Clock & Date
