@@ -13,6 +13,7 @@ async function getCalendarService() {
   if (initializationError) {
     console.error('Previous initialization error:', initializationError);
     throw initializationError;
+  }
 
   if (!calendarService) {
     console.log('Initializing new calendar service...');
