@@ -32,10 +32,13 @@ interface CalendarConfig {
 export class CalendarService {
   private client: any;
   private calendars: DAVCalendar[] = [];
+  private initialized = false;
 
   constructor(private config: CalendarConfig) {}
 
   async initialize() {
+    if (this.initialized) return;
+    
     this.client = await createDAVClient({
       serverUrl: this.config.serverUrl,
       credentials: {
@@ -47,6 +50,7 @@ export class CalendarService {
     });
 
     await this.fetchCalendars();
+    this.initialized = true;
   }
 
   private async fetchCalendars() {
@@ -58,10 +62,14 @@ export class CalendarService {
     }
   }
 
-  private parseICalEvent(data: string | Record<string, unknown> | undefined | null, calendarName: string): ParsedEvent | null {
-    if (!data || typeof data !== 'string') return null;
+  private parseICalEvent(
+    data: any,
+    calendarName: string | undefined
+  ): ParsedEvent | null {
+    if (!data) return null;
     
-    const lines = data.split('\r\n');
+    const dataString = typeof data === 'string' ? data : JSON.stringify(data);
+    const lines = dataString.split('\r\n');
     let event: Partial<ParsedEvent> = { calendar: calendarName };
     let inEvent = false;
 
@@ -119,6 +127,10 @@ export class CalendarService {
   }
 
   async getEvents(start: Date, end: Date) {
+    if (!this.initialized) {
+      await this.initialize();
+    }
+    
     try {
       console.log('Calendar Service - Fetching events with date range:', {
         start: start.toISOString(),
@@ -152,18 +164,14 @@ export class CalendarService {
           });
           
           const eventData = event?.calendarData || event?.data;
-          if (typeof eventData === 'string' || (eventData && typeof eventData === 'object')) {
+          if (eventData) {
             const parsedEvent = this.parseICalEvent(
-              typeof eventData === 'string' ? eventData : JSON.stringify(eventData),
-              calendar.displayName
+              eventData as any,
+              (calendar.displayName || 'Unknown Calendar') as string
             );
             if (parsedEvent) {
               events.push(parsedEvent);
-            } else {
-              console.log('Failed to parse event:', eventData);
             }
-          } else {
-            console.log('Invalid event data:', eventData);
           }
         }
       }

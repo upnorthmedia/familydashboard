@@ -10,6 +10,12 @@ let initializationError: Error | null = null;
 async function getCalendarService() {
   console.log('getCalendarService called');
   
+  console.log('Environment variables status:', {
+    serverUrl: process.env.CALDAV_SERVER_URL ? 'set' : 'missing',
+    username: process.env.CALDAV_USERNAME ? 'set' : 'missing',
+    password: process.env.CALDAV_PASSWORD ? 'set' : 'missing'
+  });
+  
   if (initializationError) {
     console.error('Previous initialization error:', initializationError);
     throw initializationError;

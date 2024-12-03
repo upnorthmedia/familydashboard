@@ -16,19 +16,32 @@ export function Calendar() {
     async function fetchEvents() {
       try {
         const start = startOfDay(new Date());
-        const end = endOfDay(new Date(Date.now() + 24 * 60 * 60 * 1000)); // Include tomorrow
+        const end = endOfDay(new Date(Date.now() + 24 * 60 * 60 * 1000));
+        
+        console.log('Fetching events for range:', { start, end });
         
         const response = await fetch(
           `/api/calendar?start=${start.toISOString()}&end=${end.toISOString()}`
         );
         
+        console.log('Response status:', response.status);
+        
         if (!response.ok) {
-          throw new Error('Failed to fetch calendar events');
+          const errorData = await response.json();
+          console.error('Calendar API error:', errorData);
+          throw new Error(errorData.error || 'Failed to fetch calendar events');
         }
         
         const data = await response.json();
-        setEvents(data);
+        console.log('Received calendar data:', data);
+        
+        setEvents(data.map(event => ({
+          ...event,
+          start: new Date(event.start),
+          end: new Date(event.end)
+        })));
       } catch (err) {
+        console.error('Calendar fetch error:', err);
         setError(err instanceof Error ? err.message : 'Failed to load events');
       } finally {
         setIsLoading(false);
