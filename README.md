@@ -140,11 +140,15 @@ MIT License - feel free to use this project for your own family dashboard!
 - Icons by Lucide
 
 ## Screenshots
-
-![alt text](https://i.imgur.com/UlgzvN0.png)
-![alt text](https://i.imgur.com/DGxOhDn.png)
+### Dashboard
 ![alt text](https://i.imgur.com/ttNy6Nv.jpeg)
+
+### Real Running Dashboard
 ![alt text](https://i.imgur.com/tqJ4toP.jpeg)
+
+### Mobile Admin App
+![alt text](https://i.imgur.com/DGxOhDn.png)
+
 
 ---
 
