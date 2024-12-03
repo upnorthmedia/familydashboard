@@ -2,6 +2,7 @@ import { WeatherWidget } from '@/components/WeatherWidget';
 import { ShoppingList } from '@/components/ShoppingList';
 import { Calendar } from '@/components/Calendar';
 import { Clock } from '@/components/Clock';
+import RingCameras from '@/components/RingCameras';
 
 export default function Home() {
   return (
@@ -25,7 +26,8 @@ export default function Home() {
           </div>
           <Calendar />
         </div>
-        <div>
+        <div className="space-y-8">
+          <RingCameras />
           <ShoppingList />
         </div>
       </div>
