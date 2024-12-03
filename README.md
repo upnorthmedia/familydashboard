@@ -63,7 +63,7 @@ A modern, real-time family dashboard designed to run on a Raspberry Pi connected
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/family-dashboard.git
+git clone https://github.com/upnorthmedia/family-dashboard.git
 ```
 
 2. Install dependencies
