@@ -141,7 +141,10 @@ MIT License - feel free to use this project for your own family dashboard!
 
 ## Screenshots
 
-[Add screenshots of your dashboard here]
+![alt text](https://i.imgur.com/UlgzvN0.png)
+![alt text](https://i.imgur.com/DGxOhDn.png)
+![alt text](https://i.imgur.com/ttNy6Nv.jpeg)
+![alt text](https://i.imgur.com/tqJ4toP.jpeg)
 
 ---
 
