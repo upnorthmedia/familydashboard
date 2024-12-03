@@ -2,7 +2,7 @@
 
 A modern, real-time family dashboard designed to run on a Raspberry Pi connected to a TV display. Built with Next.js 13, TypeScript, and Tailwind CSS, featuring a beautiful dark theme and glass-morphism design.
 
-![alt text](https://upnorthmedia.co/familydash/familydash.png)
+![alt Family Dashboard](https://upnorthmedia.co/familydash/familydash.png)
 
 ## Features
 
