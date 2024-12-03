@@ -16,7 +16,7 @@ A modern, real-time family dashboard designed to run on a Raspberry Pi connected
 - Real-time updates
 - Humidity and "feels like" temperature
 
-### 📅 Calendar Integration
+### 📅 Apple Calendar Integration
 - Today's and tomorrow's events
 - Real-time schedule updates
 - Clean event display with timing
